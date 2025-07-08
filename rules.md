@@ -11,3 +11,7 @@ Use stock photos from unsplash where appropriate, only valid URLs you know exist
 IMPORTANT: Never modify files in the following path:
 - components/ui/*
 - hooks/use-toast.ts
+- .gitignore
+- .ideavo/*
+
+CRITICAL: Always use .env file for environment variables, NEVER create new files like .env.local or .env.example
