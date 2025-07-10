@@ -9,8 +9,7 @@ Use icons from lucide-react for logos.
 Use stock photos from unsplash where appropriate, only valid URLs you know exist.
 
 IMPORTANT: Never modify files in the following path:
-- components/ui/*
-- hooks/use-toast.ts
+- src/components/ui/*
 - .gitignore
 - .ideavo/*
 
