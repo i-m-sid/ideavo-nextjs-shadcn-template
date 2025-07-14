@@ -16,7 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        {/* TODO: Remove iframe-navigation.js in production, should never be removed by AI */}
+        <script src="/scripts/iframe-navigation.js"></script>
+      </body>
     </html>
   );
 }
