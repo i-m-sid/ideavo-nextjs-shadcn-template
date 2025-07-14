@@ -81,6 +81,25 @@ This template includes:
 - Use appropriate field types and constraints
 - Always include `id`, `createdAt`, and `updatedAt` fields for tracking
 
+#### Database Migration Best Practices (CRITICAL)
+- **CRITICAL**: ALWAYS use `npx prisma migrate dev --name migration_name` for creating migrations with specific names
+- Always use the following format for migration name: `YYYYMMDD_HHMMSS_description`
+
+#### TypeScript Type Handling with Prisma
+- **CRITICAL**: Prisma returns `null` for nullable fields, but TypeScript interfaces often use `undefined`
+- Always handle null/undefined conversion when mapping Prisma results to interface types
+- Use `field || undefined` pattern to convert null to undefined when needed
+- Create helper functions to handle type conversion consistently
+- Example pattern:
+  ```typescript
+  return {
+    id: user.id,
+    email: user.email,
+    displayName: user.displayName || undefined,
+    avatar: user.avatar || undefined,
+  }
+  ```
+
 ## UI and Styling Guidelines
 
 ### Icons and Images
@@ -128,4 +147,4 @@ hooks/use-toast.ts       # Toast hook implementation
 
 ### Development Workflow
 - Test builds after significant changes
-- Keep running build untill build succeeds without any errors
+- Keep running build until build succeeds without any errors
