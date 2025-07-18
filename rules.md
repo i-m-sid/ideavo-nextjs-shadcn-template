@@ -84,7 +84,8 @@ This template includes:
 
 #### Database Migration Best Practices (CRITICAL)
 - **CRITICAL**: ALWAYS use `npx prisma migrate dev --name migration_name` for creating migrations with specific names
-- Always use the following format for migration name: `YYYYMMDD_HHMMSS_description`
+- Use descriptive names for migrations (e.g., `add_users_table`, `create_products_and_categories`)
+- Prisma automatically generates timestamps - do NOT manually add timestamps to migration names
 
 #### TypeScript Type Handling with Prisma
 - **CRITICAL**: Prisma returns `null` for nullable fields, but TypeScript interfaces often use `undefined`
