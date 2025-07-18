@@ -80,6 +80,7 @@ This template includes:
 - Follow Prisma naming conventions (PascalCase for models, camelCase for fields)
 - Use appropriate field types and constraints
 - Always include `id`, `createdAt`, and `updatedAt` fields for tracking
+- **CRITICAL**: Maintain data integrity - never lose data during database operations. Always use transactions for multi-table operations and implement proper rollback mechanisms
 
 #### Database Migration Best Practices (CRITICAL)
 - **CRITICAL**: ALWAYS use `npx prisma migrate dev --name migration_name` for creating migrations with specific names
@@ -127,6 +128,12 @@ hooks/use-toast.ts       # Toast hook implementation
 - NEVER create `.env.local`, `.env.example`, or other env files
 - Environment variable checking page available at `/env-check`
 - **CRITICAL**: When adding new environment variables, update `lib/env-config.ts`. Follow the ENV_VARIABLES array structure: name, description, instructions
+
+### Base URL Configuration
+- **CRITICAL**: The application's base URL is stored in `.ideavo/baseurl` file
+- Always read this file to get the correct base URL for callback URLs, webhooks, and redirects
+- Use this URL instead of hardcoding localhost or assuming domain names
+- Example: For OAuth callbacks, API webhooks, or email verification links
 
 ## Code Quality Standards
 
