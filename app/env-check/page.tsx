@@ -47,7 +47,7 @@ export default function EnvCheckPage() {
       </div>
 
       {missingCount > 0 && (
-        <Alert className="mb-6 border-red-200 bg-red-50">
+        <Alert className="mb-6 border-red-200 bg-red-50 dark:border-red-800 dark:bg-red-950/50 dark:text-red-100">
           <XCircle className="h-4 w-4" />
           <AlertDescription>
             <strong>{missingCount} environment variable{missingCount > 1 ? 's are' : ' is'} missing.</strong>
@@ -57,7 +57,7 @@ export default function EnvCheckPage() {
       )}
 
       {missingCount === 0 && (
-        <Alert className="mb-6 border-green-200 bg-green-50">
+        <Alert className="mb-6 border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-950/50 dark:text-green-100">
           <CheckCircle className="h-4 w-4" />
           <AlertDescription>
             <strong>All environment variables are properly configured!</strong>
