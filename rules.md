@@ -128,6 +128,24 @@ This template includes:
 - Do NOT install other UI theme packages unless explicitly requested
 - Customize components through Tailwind CSS classes
 
+## Project Type Detection
+
+### New Project Identification
+- **CRITICAL**: A project is considered NEW if `chat-log.md` file is empty or doesn't exist
+- New projects require different development approach focused on MVP and instant gratification
+
+### New Project Development Rules
+- Prioritize instant user gratification with simple, working features
+- **NEVER** implement authentication or database features in new projects unless explicitly requested
+- Use static data, localStorage, or simple state management instead of databases
+- Build features that provide immediate visual or functional value
+- Implement basic UI interactions and visual feedback before adding backend complexity
+
+### Existing Project Rules
+- For projects with existing chat-log.md content, follow standard development practices
+- Authentication and database features are allowed when already established in the codebase or explicitly requested by user
+- Complex implementations are acceptable when building on existing foundation
+
 ## File Management Rules
 
 ### Protected Files - NEVER MODIFY
@@ -135,6 +153,7 @@ This template includes:
 components/ui/*          # shadcn/ui components
 hooks/use-toast.ts       # Toast hook implementation
 .gitignore              # Git ignore configuration
+env-check/*             # env variable validation
 .ideavo/*               # IDE configuration
 ```
 
@@ -142,8 +161,9 @@ hooks/use-toast.ts       # Toast hook implementation
 - Use `.env` file for ALL environment variables
 - NEVER create `.env.local`, `.env.example`, or other env files
 - Environment variable checking page available at `/env-check`
-- **CRITICAL**: When adding new environment variables, update `lib/env-config.ts`. Follow the ENV_VARIABLES array structure: name, description, instructions
+- **CRITICAL**: When adding new environment variables, update `lib/env-config.ts`. Follow the ENV_VARIABLES array structure: `name`, `description`, `required` and `instructions`. Set `required: false` by default; only use `required: true` when missing the variable breaks core app functionality (e.g. auth, database).
 - **CRITICAL**: When adding database/Supabase features, uncomment the Supabase variables in `lib/env-config.ts` and add them to the ENV_VARIABLES array
+- **CRITICAL**: Only add environment variables to .env and `lib/env-config.ts` when they are actually required by existing codebase functionality. Do not create placeholder or mock variables.
 
 ### Base URL Configuration
 - **CRITICAL**: The application's base URL is stored in `.ideavo/baseurl` file
