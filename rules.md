@@ -92,8 +92,8 @@ This template includes:
 - **CRITICAL**: Maintain data integrity - never lose data during database operations. Always use transactions for multi-table operations and implement proper rollback mechanisms
 
 #### Database Migration Best Practices (CRITICAL)
-- **NEVER** use `npx prisma db push` - this command is prohibited and should never be used, always use proper migrations: `npx prisma migrate dev --name migration_name`
-- **Only after credentials are confirmed**: Use `npx prisma migrate dev --name migration_name`
+- **NEVER** use `bunx prisma db push` - this command is prohibited and should never be used, always use proper migrations: `bunx prisma migrate dev --name migration_name`
+- **Only after credentials are confirmed**: Use `bunx prisma migrate dev --name migration_name`
 - **If migration fails due to credential errors**: Immediately revert any created migration files and instruct user to set up credentials first
 - Use descriptive names for migrations (e.g., `add_users_table`, `create_products_and_categories`)
 - Prisma automatically generates timestamps - do NOT manually add timestamps to migration names
@@ -200,7 +200,7 @@ env-check/*             # env variable validation
 
 ### Dependency Management
 - Always verify dependencies exist in `package.json` before importing modules
-- Install TypeScript type definitions immediately: `npm i --save-dev @types/package-name`
+- Install TypeScript type definitions immediately: `bun add -d @types/package-name`
 - Check for missing type declarations and install them proactively
 - Always search on web for implementation details and documentations for third party libraries, never make assumptions
 

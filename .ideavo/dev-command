@@ -1,2 +1,2 @@
-npm i && npm run build
-npm run start
+bun install && bun run build
+bun run start

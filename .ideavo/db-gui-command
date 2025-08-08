@@ -1,1 +1,1 @@
-npm run db:studio
+bun run db:studio
