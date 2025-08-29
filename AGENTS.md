@@ -144,10 +144,6 @@ This template includes:
 
 ## Project Type Detection
 
-### New Project Identification
-- **CRITICAL**: A project is considered NEW if `chat-log.md` file is empty or doesn't exist
-- New projects require different development approach focused on MVP and instant gratification
-
 ### New Project Development Rules
 - Prioritize instant user gratification with simple, working features
 - **NEVER** implement authentication or database features in new projects unless explicitly requested
@@ -156,7 +152,6 @@ This template includes:
 - Implement basic UI interactions and visual feedback before adding backend complexity
 
 ### Existing Project Rules
-- For projects with existing chat-log.md content, follow standard development practices
 - Authentication and database features are allowed when already established in the codebase or explicitly requested by user
 - Complex implementations are acceptable when building on existing foundation
 
@@ -179,12 +174,6 @@ env-check/*             # env variable validation
 - **CRITICAL**: When adding database/Supabase features, uncomment the Supabase variables in `lib/env-config.ts` and add them to the ENV_VARIABLES array
 - **CRITICAL**: Only add environment variables to .env and `lib/env-config.ts` when they are actually required by existing codebase functionality. Do not create placeholder or mock variables.
 
-### Base URL Configuration
-- **CRITICAL**: The application's base URL is stored in `.ideavo/baseurl` file
-- Always read this file to get the correct base URL for callback URLs, webhooks, and redirects
-- Use this URL instead of hardcoding localhost or assuming domain names
-- Example: For OAuth callbacks, API webhooks, or email verification links
-
 ## Code Quality Standards
 
 ### Error Handling
@@ -200,8 +189,6 @@ env-check/*             # env variable validation
 
 ### Dependency Management
 - Always verify dependencies exist in `package.json` before importing modules
-- Install TypeScript type definitions immediately: `bun add -d @types/package-name`
-- Check for missing type declarations and install them proactively
 - Always search on web for implementation details and documentations for third party libraries, never make assumptions
 
 ### Development Workflow

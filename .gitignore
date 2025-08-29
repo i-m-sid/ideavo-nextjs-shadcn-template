@@ -27,6 +27,7 @@ yarn-error.log*
 bun-debug.log*
 ideavo-server.log
 ideavo-build.log
+.ideavo-attachments
 
 .env
 
