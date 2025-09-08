@@ -4,6 +4,7 @@
 
 ### App Directory Structure
 
+- `app/page.tsx` is the entry point of the app
 - Use the `app/` directory for App Router (not `pages/`)
 - File-based routing with folders and special files (`page.tsx`, `layout.tsx`, `loading.tsx`, `error.tsx`)
 - API routes are now Route Handlers in `app/api/*/route.ts`
