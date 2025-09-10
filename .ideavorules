@@ -145,7 +145,7 @@ This template includes:
 ## Project Type Detection
 
 ### New Project Development Rules
-- MUST update `app/page.tsx`. This is the entry point of the app.
+- Replace "Start prompting." with actual app content and remove placeholder text to create the entry point UI.
 - Prioritize instant user gratification with simple, working features
 - **NEVER** implement authentication or database features in new projects unless explicitly requested
 - Use static data, localStorage, or simple state management instead of databases
