@@ -8,7 +8,7 @@
     "start": "next start",
     "db:studio": "prisma studio",
     "db:seed": "prisma db seed",
-    "postinstall": "chmod +x scripts/pre-commit.sh"
+    "postinstall": "chmod +x scripts/pre-commit.sh && lefthook install && git lfs install || true"
   },
   "dependencies": {
     "@hookform/resolvers": "3.9.1",
