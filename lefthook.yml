@@ -1,0 +1,5 @@
+pre-commit:
+  commands:
+    pre-commit:
+      run: ./scripts/pre-commit.sh
+      stage_fixed: true
