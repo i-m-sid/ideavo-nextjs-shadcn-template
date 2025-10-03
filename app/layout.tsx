@@ -18,8 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {children}
-        {/* TODO: Remove iframe-navigation.js in production, should never be removed by AI */}
-        <script src="/scripts/iframe-navigation.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/IdeavoAI/ideavo-scripts@1.0.1/scripts/ideavo.min.js"></script>
       </body>
     </html>
   );
